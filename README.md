@@ -1,2 +1,2 @@
-# MMGenerativeIR
-A Generative Retrieval Framework for Multi-Modal Queries
+# GeMKR 
+Generative Multi-Modal Knowledge Retrieval with Large Language Models
