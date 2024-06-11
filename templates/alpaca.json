@@ -1,0 +1,7 @@
+{
+    "description": "Template used by Alpaca-LoRA.",
+    "prompt_input": "Below is a knowledge completion task. Please provide the knowledge keywords that can answer this question based on the Image.\n\n### Question:\n{input}\n\n### Image:\n<ImageHere>\n\n### Response:\n",
+    "prompt_no_image": "Below is a knowledge generation task. Please provide the factual knowledge or common sense supporting the below Input.\n\n### Input:\n{input}\n\n### Response:\n",
+    "prompt_no_input": "Below is an instruction that describes a task. Write a response that appropriately completes the request.\n\n### Instruction:\n{instruction}\n\n### Response:\n",
+    "response_split": "### Response:"    
+}
