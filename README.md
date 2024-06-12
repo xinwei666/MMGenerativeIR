@@ -68,7 +68,7 @@ If you need the FM-index files for Wiki-21M, please contact us via [email](longx
 ### Fine-tuning
 In the [train_configs/gemkr_finetune.yaml](https://github.com/xinwei666/MMGenerativeIR/blob/main/train_configs/gemkr_finetune.yaml), you need to set up the following paths:
 - the image root path of "MSCOCO/coco2014/train" (line 15).
-- the path to save the region features (line 16).
+- the path to the region features (line 16).
 
 Besides, we need to specify the path to the llama_model (line 16) in the ["./gemkr/configs/models/gemkr.yaml"](https://github.com/xinwei666/MMGenerativeIR/blob/main/gemkr/configs/models/gemkr.yaml).
 
