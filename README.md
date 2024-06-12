@@ -31,7 +31,7 @@ We are grateful for the following awesome projects our GeMKR arising from:
 - [SEAL](https://arxiv.org/abs/2204.10628)
 - [Minigpt-4](https://github.com/Vision-CAIR/MiniGPT-4)
 - [VRR](https://arxiv.org/abs/2109.04014)
-- [YOLOv7] (https://arxiv.org/abs/2207.02696).
+- [YOLOv7](https://arxiv.org/abs/2207.02696)
 
 
 ## Citation
