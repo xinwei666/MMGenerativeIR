@@ -62,9 +62,20 @@ If you need the FM-index files for Wiki-21M, please contact us via email (longxw
 ```
 
 ### Fine-tuning
+In the train_configs/gemkr_finetune.yaml, you need to set up the following paths:
+- the image root path of "MSCOCO/coco2014/train" (line 15).
+- the path to save the region features (line 16).
+Besides, we need to specify the path to the llama_model (line 16) in the "./gemkr/configs/models/gemkr.yaml".
+
+You can set the batch size based on the GPU you are using. As a reference, we used an A6000 GPU and set the batch size to 12, which took about 2.5 hours for training.
 ```
 python train.py
 ```
+
+The trained checkpoint is saved in the following directory by default:
+"./gemkr/output/gemkr_finetune/20xxxxxxxx/*.pth"
+We trained the model for 5 epochs and used the checkpoint obtained from the last epoch for evaluation.
+
 
 ### Evaluation
 ```
