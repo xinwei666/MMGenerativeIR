@@ -70,7 +70,7 @@ In the [train_configs/gemkr_finetune.yaml](https://github.com/xinwei666/MMGenera
 - the image root path of "MSCOCO/coco2014/train" (line 15).
 - the path to the region features (line 16).
 
-Besides, we need to specify the path to the llama_model (line 16) in the ["./gemkr/configs/models/gemkr.yaml"](https://github.com/xinwei666/MMGenerativeIR/blob/main/gemkr/configs/models/gemkr.yaml).
+Besides, please specify the path to the llama_model (line 16) in the ["./gemkr/configs/models/gemkr.yaml"](https://github.com/xinwei666/MMGenerativeIR/blob/main/gemkr/configs/models/gemkr.yaml).
 
 You can set the batch size based on the GPU you are using. As a reference, we used an A6000 GPU and set the batch size to 12, which took about 2.5 hours for training.
 ```
@@ -83,8 +83,10 @@ We trained the model for 5 epochs and **used the checkpoint obtained from the la
 
 
 ### Evaluation
+Please specify the path to the checkpoint in the ["eval_configs/gemkr_eval.yaml"](https://github.com/xinwei666/MMGenerativeIR/blob/main/eval_configs/gemkr_eval.yaml) (line 11).
+
 ```
-python eval.py
+python eval.py --img_root your_path_to_mscoco_val --region_feat_path your_path_to_region_feat
 ```
 If you want to directly evaluate our model using the checkpoint we provided, please download the checkpoint from this [Link](https://drive.google.com/drive/folders/10_8NIvJAisaU41Usm21CWNSXwnZwezVH?usp=drive_link).
 
