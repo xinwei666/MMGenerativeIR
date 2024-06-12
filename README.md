@@ -21,9 +21,9 @@ pip install -r requirements.txt
 
 ## Preparation
 ### Raw data and model weights
-For the raw OKVQA-GS112K dataset, which includes the corpus, train, and dev-test files, please refer to the [official repo]((https://arxiv.org/abs/2109.04014)) of VRR. Or you can directly use the data that we have already saved in the './dataset' directory.
+For the raw OKVQA-GS112K dataset, which includes the corpus, train, and dev-test files, please refer to the [official repo](https://arxiv.org/abs/2109.04014) of VRR. Or you can directly use the data that we have already saved in the './dataset' directory.
 
-For the weights of LLaMA, or unofficial HuggingFace repo [LLaMA-7B](https://huggingface.co/nyanko7/LLaMA-7B/tree/main) and [LLaMA-13B](https://huggingface.co/TheBloke/llama-13b).
+For the weights of LLaMA, please refer to the [official form](https://forms.gle/jk851eBVbX1m5TAv5) or unofficial HuggingFace repo [LLaMA-7B](https://huggingface.co/nyanko7/LLaMA-7B/tree/main).
 
 ### Region features
 To obtain the RoIs of each image, we used [YOLOv7](https://arxiv.org/abs/2207.02696) and have shared our cropped ROIs files at this [YOLOv7](https://arxiv.org/abs/2207.02696). Next, please download the files and use the following command to encode the features of each ROI using the CLIP model (it should take no more than 30 minutes).
