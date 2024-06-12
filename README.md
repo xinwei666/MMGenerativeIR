@@ -19,6 +19,27 @@ pip install -r requirements.txt
 - [ ] Code of extensive experiments on downstream tasks, such as knowledge-based VQA.
 
 
+### Project Structure
+```bash
+<your path>/
+  |-- train.py
+  |-- eval.py
+  |-- eval_configs
+      |-- gemkr_eval.yaml # It is the config file for evaluation, please specify the checkpoint path here.
+  |-- gemkr
+      |-- models  # source codes of the model.
+      |-- outputs # The default location where the checkpoint is stored.
+      |-- ......
+  ......
+  |-- train_configs
+      |-- gemkr_finetune.yaml # It is the config file for fine-tuning, please specify the path to the images and region features here.
+  |-- dataset/
+      |-- okvqa
+          |-- train.json         #  train file
+          |-- test.json          #  test file
+```
+
+
 ## Preparation
 ### Raw data and model weights
 For the raw OKVQA-GS112K dataset, which includes the corpus, train, and dev-test files, please refer to the [official repo](https://arxiv.org/abs/2109.04014) of VRR. Or you can directly use the data that we have already saved in the './dataset' directory.
@@ -40,32 +61,15 @@ python ./data_process/my_build_fm_index.py
 
 If you need the FM-index files for Wiki-21M, please contact us via email (longxw22@mails.tsinghua.edu.cn). Due to Google Drive storage limitations, we will provide it to you in a different way.
 
+
+
 ## Fine-tuning and Evaluation
-### Project Structure
-```bash
-<your path>/
-  |-- train.py
-  |-- eval.py
-  |-- eval_configs
-      |-- gemkr_eval.yaml # It is the config file for evaluation, please specify the checkpoint path here.
-  |-- gemkr
-      |-- models  # source codes of the model.
-      |-- outputs # The default location where the checkpoint is stored.
-      |-- ......
-  ......
-  |-- train_configs
-      |-- gemkr_finetune.yaml # It is the config file for fine-tuning, please specify the path to the images and region features here.
-  |-- dataset/
-      |-- okvqa
-          |-- train.json         #  train file
-          |-- test.json          #  test file
-```
 
 ### Fine-tuning
-In the train_configs/gemkr_finetune.yaml, you need to set up the following paths:
+In the [train_configs/gemkr_finetune.yaml](https://github.com/xinwei666/MMGenerativeIR/blob/main/train_configs/gemkr_finetune.yaml), you need to set up the following paths:
 - the image root path of "MSCOCO/coco2014/train" (line 15).
 - the path to save the region features (line 16).
-Besides, we need to specify the path to the llama_model (line 16) in the "./gemkr/configs/models/gemkr.yaml".
+Besides, we need to specify the path to the llama_model (line 16) in the ["./gemkr/configs/models/gemkr.yaml"](https://github.com/xinwei666/MMGenerativeIR/blob/main/gemkr/configs/models/gemkr.yaml).
 
 You can set the batch size based on the GPU you are using. As a reference, we used an A6000 GPU and set the batch size to 12, which took about 2.5 hours for training.
 ```
