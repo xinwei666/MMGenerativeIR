@@ -26,7 +26,6 @@ TBD
 TBD
 
 ## Acknowledgements
-We are grateful for the following awesome projects our GeMKR arising from:
 
 - [SEAL](https://arxiv.org/abs/2204.10628)
 - [Minigpt-4](https://github.com/Vision-CAIR/MiniGPT-4)
