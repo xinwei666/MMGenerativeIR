@@ -73,8 +73,8 @@ python train.py
 ```
 
 The trained checkpoint is saved in the following directory by default:
-"./gemkr/output/gemkr_finetune/20xxxxxxxx/*.pth"
-We trained the model for 5 epochs and used the checkpoint obtained from the last epoch for evaluation.
+"./gemkr/output/gemkr_finetune/20xxxxxxxx/checkpoint*.pth"
+We trained the model for 5 epochs and **used the checkpoint obtained from the last epoch for evaluation.**
 
 
 ### Evaluation
