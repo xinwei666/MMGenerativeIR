@@ -59,7 +59,7 @@ python ./data_process/my_build_fm_index.py
 ```
 **Alternatively, you can directly obtain them from this [Link](https://drive.google.com/drive/folders/1nmvWMQLlMw-guTc1zhLfrIaa_texYCj4?usp=drive_link). Please save these three files in the './index' directory.**
 
-If you need the FM-index files for Wiki-21M, please contact us via [email](longxw22@mails.tsinghua.edu.cn). Due to Google Drive storage limitations, we will provide them to you in other ways.
+If you need the FM-index files for Wiki-21M, please contact us via [email](longxw22@mails.tsinghua.edu.cn). Due to the storage limitation of Google Drive, we will provide them to you in other ways.
 
 
 
