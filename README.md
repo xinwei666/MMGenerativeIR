@@ -21,7 +21,8 @@ pip install -r requirements.txt
 
 ## Preparation
 ### Raw data and model weights
-For the raw OKVQA-GS112K dataset, including the corpus, train, and dev-test files, please refer to the [official repo]((https://arxiv.org/abs/2109.04014)) of VRR. Or you can directly use the data and indices that we have already processed for you.
+For the raw OKVQA-GS112K dataset, which includes the corpus, train, and dev-test files, please refer to the [official repo]((https://arxiv.org/abs/2109.04014)) of VRR. Or you can directly use the data that we have already saved in the './dataset' directory.
+
 For the weights of LLaMA, or unofficial HuggingFace repo [LLaMA-7B](https://huggingface.co/nyanko7/LLaMA-7B/tree/main) and [LLaMA-13B](https://huggingface.co/TheBloke/llama-13b).
 
 ### Region features
@@ -31,7 +32,12 @@ python ./data_process/encode_region.py --region_img_root your_roi_file_path --ou
 ```
 
 ### FM-Index Initialization
-You can run the following command to generate the corresponding FM-Index, which includes three files (*.fmi, *.oth, and id2text.json). Alternatively, you can directly obtain them from this link. Please save these three files in the './index' directory.
+You can run the following command to generate the corresponding FM-Index, which includes three files (*.fmi, *.oth, and id2text.json). Before running the command, please specify the locations of the corpus and Llama tokenizer in the './data_process/my_build_fm_index.py' file. 
+
+Alternatively, you can directly obtain them from this link. Please save these three files in the './index' directory.
+```
+python ./data_process/my_build_fm_index.py
+```
 
 ## Fine-tuning and Evaluation
 TBD
