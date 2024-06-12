@@ -26,7 +26,7 @@ For the raw OKVQA-GS112K dataset, which includes the corpus, train, and dev-test
 For the weights of LLaMA, please refer to the [official form](https://forms.gle/jk851eBVbX1m5TAv5) or unofficial HuggingFace repo [LLaMA-7B](https://huggingface.co/nyanko7/LLaMA-7B/tree/main).
 
 ### Region features
-To obtain the RoIs of each image, we used [YOLOv7](https://arxiv.org/abs/2207.02696) and have shared our cropped ROIs files at this [Link](https://arxiv.org/abs/2207.02696). Next, please download the files and use the following command to encode the features of each ROI using the CLIP model (it should take no more than 30 minutes).
+To obtain the RoIs of each image, we used [YOLOv7](https://arxiv.org/abs/2207.02696) and have shared our cropped ROIs files at this [Link](https://drive.google.com/drive/folders/19pAzQB7jPxR4aWhBBBgBpnYIh2YP2USG?usp=drive_link). Next, please download the files and use the following command to encode the features of each ROI using the CLIP model (it should take no more than 30 minutes).
 ```
 python ./data_process/encode_region.py --region_img_root your_roi_file_path --output_feat_root your_save_path
 ```
@@ -36,11 +36,30 @@ You can run the following command to generate the corresponding FM-Index, which 
 ```
 python ./data_process/my_build_fm_index.py
 ```
-**Alternatively, you can directly obtain them from this [Link](https://arxiv.org/abs/2207.02696). Please save these three files in the './index' directory.**
+**Alternatively, you can directly obtain them from this [Link](https://drive.google.com/drive/folders/1nmvWMQLlMw-guTc1zhLfrIaa_texYCj4?usp=drive_link). Please save these three files in the './index' directory.**
 
 If you need the FM-index files for Wiki-21M, please contact us via email (longxw22@mails.tsinghua.edu.cn). Due to Google Drive storage limitations, we will provide it to you in a different way.
 
 ## Fine-tuning and Evaluation
+### Project Structure
+```bash
+<your path>/
+  |-- train.py
+  |-- eval.py
+  |-- eval_configs
+      |-- gemkr_eval.yaml # It is the config file for evaluation, please specify the checkpoint path here.
+  |-- gemkr
+      |-- models  # source codes of the model.
+      |-- outputs # The default location where the checkpoint is stored.
+      |-- ......
+  ......
+  |-- train_configs
+      |-- gemkr_finetune.yaml # It is the config file for fine-tuning, please specify the path to the images and region features here.
+  |-- dataset/
+      |-- okvqa
+          |-- train.json         #  train file
+          |-- test.json          #  test file
+```
 
 ### Fine-tuning
 ```
@@ -51,7 +70,8 @@ python train.py
 ```
 python eval.py
 ```
-If you want to directly evaluate our model using the checkpoint we provided, please download the checkpoint from this [Link](https://arxiv.org/abs/2207.02696).
+If you want to directly evaluate our model using the checkpoint we provided, please download the checkpoint from this [Link](https://drive.google.com/drive/folders/10_8NIvJAisaU41Usm21CWNSXwnZwezVH?usp=drive_link).
+
 **If you want to directly obtain our retrieval results without running our model**, we can provide you with the final JSON-formatted result file (No more than 10 documents retrieved for each question). Please contact us via email.
 
 
