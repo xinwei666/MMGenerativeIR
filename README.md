@@ -38,9 +38,22 @@ python ./data_process/my_build_fm_index.py
 ```
 **Alternatively, you can directly obtain them from this [Link](https://arxiv.org/abs/2207.02696). Please save these three files in the './index' directory.**
 
+If you need the FM-index files for Wiki-21M, please contact us via email (longxw22@mails.tsinghua.edu.cn). Due to Google Drive storage limitations, we will provide it to you in a different way.
 
 ## Fine-tuning and Evaluation
-TBD
+
+### Fine-tuning
+```
+python train.py
+```
+
+### Evaluation
+```
+python eval.py
+```
+If you want to directly evaluate our model using the checkpoint we provided, please download the checkpoint from this [Link](https://arxiv.org/abs/2207.02696).
+**If you want to directly obtain our retrieval results without running our model**, we can provide you with the final JSON-formatted result file (No more than 10 documents retrieved for each question). Please contact us via email.
+
 
 ## Acknowledgements
 
