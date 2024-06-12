@@ -26,18 +26,18 @@ For the raw OKVQA-GS112K dataset, which includes the corpus, train, and dev-test
 For the weights of LLaMA, please refer to the [official form](https://forms.gle/jk851eBVbX1m5TAv5) or unofficial HuggingFace repo [LLaMA-7B](https://huggingface.co/nyanko7/LLaMA-7B/tree/main).
 
 ### Region features
-To obtain the RoIs of each image, we used [YOLOv7](https://arxiv.org/abs/2207.02696) and have shared our cropped ROIs files at this [YOLOv7](https://arxiv.org/abs/2207.02696). Next, please download the files and use the following command to encode the features of each ROI using the CLIP model (it should take no more than 30 minutes).
+To obtain the RoIs of each image, we used [YOLOv7](https://arxiv.org/abs/2207.02696) and have shared our cropped ROIs files at this [Link](https://arxiv.org/abs/2207.02696). Next, please download the files and use the following command to encode the features of each ROI using the CLIP model (it should take no more than 30 minutes).
 ```
 python ./data_process/encode_region.py --region_img_root your_roi_file_path --output_feat_root your_save_path
 ```
 
 ### FM-Index Initialization
 You can run the following command to generate the corresponding FM-Index, which includes three files (*.fmi, *.oth, and id2text.json). Before running the command, please specify the locations of the corpus and Llama tokenizer in the './data_process/my_build_fm_index.py' file. 
-
-Alternatively, you can directly obtain them from this link. Please save these three files in the './index' directory.
 ```
 python ./data_process/my_build_fm_index.py
 ```
+**Alternatively, you can directly obtain them from this [Link](https://arxiv.org/abs/2207.02696). Please save these three files in the './index' directory.**
+
 
 ## Fine-tuning and Evaluation
 TBD
