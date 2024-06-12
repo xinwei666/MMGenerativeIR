@@ -19,8 +19,19 @@ pip install -r requirements.txt
 - [ ] Code of extensive experiments on downstream tasks, such as knowledge-based VQA.
 
 
-## Data Preparation
-TBD
+## Preparation
+### Raw data and model weights
+For the raw OKVQA-GS112K dataset, including the corpus, train, and dev-test files, please refer to the [official repo]((https://arxiv.org/abs/2109.04014)) of VRR. Or you can directly use the data and indices that we have already processed for you.
+For the weights of LLaMA, or unofficial HuggingFace repo [LLaMA-7B](https://huggingface.co/nyanko7/LLaMA-7B/tree/main) and [LLaMA-13B](https://huggingface.co/TheBloke/llama-13b).
+
+### Region features
+To obtain the RoIs of each image, we used [YOLOv7](https://arxiv.org/abs/2207.02696) and have shared our cropped ROIs files at this [YOLOv7](https://arxiv.org/abs/2207.02696). Next, please download the files and use the following command to encode the features of each ROI using the CLIP model (it should take no more than 30 minutes).
+```
+python ./data_process/encode_region.py --region_img_root your_roi_file_path --output_feat_root your_save_path
+```
+
+### FM-Index Initialization
+You can run the following command to generate the corresponding FM-Index, which includes three files (*.fmi, *.oth, and id2text.json). Alternatively, you can directly obtain them from this link. Please save these three files in the './index' directory.
 
 ## Fine-tuning and Evaluation
 TBD
