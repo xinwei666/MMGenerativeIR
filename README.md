@@ -16,7 +16,7 @@ pip install -r requirements.txt
 ## TODO 
 - [x] Code of experiments on LLaMA-1.
 - [ ] Code of extensive version on the advanced MLLMs (work in progress).
-- [ ] Code of extensive experiments on downstream tasks, such as knowledge-based VQA (Coming Soon).
+- [x] Code of extensive experiments on downstream tasks, such as knowledge-based VQA (**Coming Soon**).
 
 
 ### Project Structure
