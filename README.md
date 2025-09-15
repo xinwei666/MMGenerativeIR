@@ -92,8 +92,8 @@ python eval.py --img_root your_path_to_mscoco_val --region_feat_path your_path_t
 ```
 If you want to directly evaluate our model using the checkpoint we provided, please download the checkpoint from this [Link](https://drive.google.com/drive/folders/10_8NIvJAisaU41Usm21CWNSXwnZwezVH?usp=drive_link).
 
-**If you want to directly obtain our retrieval results without running our model**, we can provide you with the final JSON-formatted result file (No more than 10 documents retrieved for each question). Please contact us via [email](longxw22@mails.tsinghua.edu.cn).
-
+~~**If you want to directly obtain our retrieval results without running our model**, we can provide you with the final JSON-formatted result file (No more than 10 documents retrieved for each question). Please contact us via [email](longxw22@mails.tsinghua.edu.cn).~~
+We have provided a JSON-formatted file of our retrieval results (results_okvqa_20240611004_p5: 0.491.json). Each numerical ID here corresponds to the ID-to-document mapping in the id2text.json file we supplied.
 
 ## Acknowledgements
 
